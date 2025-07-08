@@ -1,6 +1,8 @@
 // Selected Items Box Toggle
 
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("Art Department JS loaded!");
+    
     // --- Selected Items Box Toggle ---
     function setupSelectedItemsBoxToggle() {
         const toggleButton = document.getElementById("toggle-box");
@@ -299,10 +301,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const closeBtn = document.querySelector('.image-preview-close');
         const previewableImages = document.querySelectorAll('.previewable-image');
 
-        if (!modal || !modalImg || !closeBtn) return;
+        console.log("Modal:", modal, "ModalImg:", modalImg, "CloseBtn:", closeBtn, "PreviewableImages count:", previewableImages.length);
+
+        if (!modal || !modalImg || !closeBtn) {
+            console.log("Missing modal elements - early return");
+            return;
+        }
 
         previewableImages.forEach(img => {
             img.addEventListener('click', function(e) {
+                console.log("Previewable image clicked:", this);
                 e.preventDefault();
                 modal.classList.add('active');
                 modal.style.display = 'flex';
@@ -312,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         function closeModal() {
+            console.log("Modal closed");
             modal.classList.remove('active');
             modal.style.display = 'none';
             modalImg.src = '';

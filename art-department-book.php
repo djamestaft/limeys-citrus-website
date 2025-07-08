@@ -128,49 +128,7 @@ function art_department_shortcode($atts) {
     $output .= art_department_render_selected_items_box();
     $output .= art_department_render_form();
 
-    // Check if the folder exists
-    if (is_dir($folder_path)) {
-        // Get all directories within the folder
-        $dirs = array_filter(glob($folder_path . '*'), 'is_dir');
-
-        // Loop through each folder
-        foreach ($dirs as $dir) {
-            $folder_name = basename($dir);
-            $output .= '<div class="folder">';
-            $output .= '<h3 class="collapsible category-accordian">' . ucfirst(str_replace('-', ' ', $folder_name)) . '</h3>';
-            $output .= '<div class="content" style="display:none;">';
-
-            // Get all images in the folder (jpg, jpeg, png)
-            $images = array_merge(
-                glob($dir . '/*.jpg'),
-                glob($dir . '/*.jpeg'),
-                glob($dir . '/*.png')
-            );
-
-            if ($images) {
-                $output .= '<p class="help-text"><strong>To select or deselect items:</strong> Use the + and - buttons below each product to select your desired item and adjust the quantity.</p>';
-                $output .= '<div class="image-grid">';
-                foreach ($images as $image) {
-                    $image_name = basename($image, '.' . pathinfo($image, PATHINFO_EXTENSION));
-                    $formatted_name = ucfirst(str_replace('-', ' ', $image_name));
-                    $output .= '
-                        <div class="image-item">
-                            <img src="' . content_url('/uploads/art-department/' . $folder_name . '/' . basename($image)) . '" alt="' . $formatted_name . '" class="selectable-image">
-                            <p class="order-item-description">' . $formatted_name . '</p>
-                            <div class="quantity-selector">
-                                <button class="quantity-down">-</button>
-                                <input type="number" value="0" class="quantity-input" min="0">
-                                <button class="quantity-up">+</button>
-                            </div>
-                        </div>';
-                }
-                $output .= '</div>';
-            }
-            $output .= '</div></div>';
-        }
-    } else {
-        $output .= '<p>No folders found.</p>';
-    }
+    // Note: Image grid rendering is now handled by the template below
 
     // Render the image grid/category section
     $output .= art_department_render_image_grid($folder_path);
