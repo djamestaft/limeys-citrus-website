@@ -28,9 +28,9 @@ if (is_dir($folder_path)) {
                         <img src="' . content_url('/uploads/art-department/' . $folder_name . '/' . basename($image)) . '" alt="' . $formatted_name . '" class="selectable-image previewable-image" data-full="' . content_url('/uploads/art-department/' . $folder_name . '/' . basename($image)) . '">
                         <p class="order-item-description">' . $formatted_name . '</p>
                         <div class="quantity-selector">
-                            <button class="quantity-down">-</button>
-                            <input type="number" value="0" class="quantity-input" min="0">
-                            <button class="quantity-up">+</button>
+                            <button type="button" class="quantity-down" aria-label="Decrease quantity">−</button>
+                            <input type="number" value="0" class="quantity-input" min="0" max="99" aria-label="Quantity">
+                            <button type="button" class="quantity-up" aria-label="Increase quantity">+</button>
                         </div>
                     </div>';
             }

@@ -181,25 +181,83 @@
     margin: 0;
     z-index: 0;
 }
-.quantity-down {   
-    margin: 0 !important;
-}
-.quantity-up {   
-    margin: 0 !important;
-}
+/* Quantity Selector Styling */
 .quantity-selector {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+}
+
+.quantity-selector input {
+    width: 50px;
+    height: 36px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.quantity-selector input:focus {
+    background-color: #fff;
+}
+
+.quantity-down, .quantity-up {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: #0073aa;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+    margin: 0 !important;
+    padding: 0 !important;
 }
-.quantity-selector button { 
-    font-size: 16px;
-    cursor: pointer;
-    padding: 1px !important;
+
+.quantity-down:hover, .quantity-up:hover {
+    background-color: #005a87;
+    transform: scale(1.05);
 }
-.quantity-selector input {
-    width: 40px;
-    text-align: center;
+
+.quantity-down:active, .quantity-up:active {
+    transform: scale(0.95);
+    background-color: #004570;
+}
+
+.quantity-down {
+    border-right: 1px solid #ddd;
+}
+
+.quantity-up {
+    border-left: 1px solid #ddd;
+}
+
+/* Disabled state for quantity buttons */
+.quantity-down:disabled, .quantity-up:disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.quantity-down:disabled:hover, .quantity-up:disabled:hover {
+    background-color: #ccc;
+    transform: none;
 }
 .category-accordian {
     font-size: 24px;
