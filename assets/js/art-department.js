@@ -296,7 +296,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // --- Image Preview Modal ---
     function setupImagePreviewModal() {
-        const modal = document.getElementById('image-preview-modal');
+        // Create modal and append to body if it doesn't exist
+        let modal = document.getElementById('image-preview-modal');
+        if (!modal) {
+                        // Create modal container
+            modal = document.createElement('div');
+            modal.id = 'image-preview-modal';
+            modal.className = 'image-preview-modal';
+            modal.style.display = 'none';
+
+            // Create content wrapper
+            const contentWrapper = document.createElement('div');
+            contentWrapper.className = 'image-preview-wrapper';
+
+            // Create close button
+            const closeBtn = document.createElement('span');
+            closeBtn.className = 'image-preview-close';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.setAttribute('title', 'Close');
+            closeBtn.setAttribute('aria-label', 'Close modal');
+
+            // Create image element
+            const modalImg = document.createElement('img');
+            modalImg.className = 'image-preview-content';
+            modalImg.id = 'image-preview-content';
+            modalImg.src = '';
+            modalImg.alt = 'Preview';
+
+            // Assemble modal
+            contentWrapper.appendChild(closeBtn);
+            contentWrapper.appendChild(modalImg);
+            modal.appendChild(contentWrapper);
+
+            // Append directly to body
+            document.body.appendChild(modal);
+        }
+
         const modalImg = document.getElementById('image-preview-content');
         const closeBtn = document.querySelector('.image-preview-close');
         const previewableImages = document.querySelectorAll('.previewable-image');

@@ -42,9 +42,4 @@ if (is_dir($folder_path)) {
     echo '<p>No folders found.</p>';
 }
 
-// At the end of the file, add the modal HTML
-?>
-<div id="image-preview-modal" class="image-preview-modal" style="display:none;">
-    <span class="image-preview-close">&times;</span>
-    <img class="image-preview-content" id="image-preview-content" src="" alt="Preview">
-</div> 
+?> 
