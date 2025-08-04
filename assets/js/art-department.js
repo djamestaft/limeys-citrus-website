@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (scrollY > initialTop) {
                     selectedItemsBox.style.position = "fixed";
                     selectedItemsBox.style.top = "160px";
-                    selectedItemsBox.style.right = "12px;";
+                    selectedItemsBox.style.right = "12px";
                 } else {
                     selectedItemsBox.style.position = "absolute";
                     selectedItemsBox.style.top = `${initialTop}px`;
@@ -178,14 +178,16 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-        clearButton.addEventListener("click", function() {
-            document.querySelectorAll(".quantity-input").forEach(input => {
-                input.value = 0;
+        if (clearButton) {
+            clearButton.addEventListener("click", function() {
+                document.querySelectorAll(".quantity-input").forEach(input => {
+                    input.value = 0;
+                });
+                selectedImages.length = 0;
+                selectedItemsList.innerHTML = "";
+                if (selectedImages.length > 0) { updateFloatingBox(); } else {};
             });
-            selectedImages.length = 0;
-            selectedItemsList.innerHTML = "";
-            if (selectedImages.length > 0) { updateFloatingBox(); } else {};
-        });
+        }
 
         const nameInput = document.getElementById("name");
         const emailInput = document.getElementById("email");
