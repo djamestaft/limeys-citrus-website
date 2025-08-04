@@ -198,25 +198,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function validateFields() {
             if (
-                nameInput.value &&
-                emailInput.value &&
-                phoneInput.value &&
-                hireStartInput.value &&
-                hireEndInput.value
+                nameInput && nameInput.value &&
+                emailInput && emailInput.value &&
+                phoneInput && phoneInput.value &&
+                hireStartInput && hireStartInput.value &&
+                hireEndInput && hireEndInput.value &&
+                generateButton
             ) {
                 generateButton.disabled = false;
-            } else {
+            } else if (generateButton) {
                 generateButton.disabled = true;
             }
         }
 
-        nameInput.addEventListener("input", validateFields);
-        emailInput.addEventListener("input", validateFields);
-        phoneInput.addEventListener("input", validateFields);
-        hireStartInput.addEventListener("input", validateFields);
-        hireEndInput.addEventListener("input", validateFields);
+        if (nameInput) nameInput.addEventListener("input", validateFields);
+        if (emailInput) emailInput.addEventListener("input", validateFields);
+        if (phoneInput) phoneInput.addEventListener("input", validateFields);
+        if (hireStartInput) hireStartInput.addEventListener("input", validateFields);
+        if (hireEndInput) hireEndInput.addEventListener("input", validateFields);
 
-        document.getElementById("art-department-form").addEventListener("submit", function(event) {
+        const form = document.getElementById("art-department-form");
+        if (form) {
+            form.addEventListener("submit", function(event) {
             event.preventDefault();
             const formData = new FormData(this);
             formData.append("action", "art_department_email");
@@ -238,13 +241,18 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => {
                 console.error("An error occurred:", error);
             });
-        });
+            });
+        }
     }
 
     // --- Make the DIV element draggable ---
     function setupDraggableSelectedItemsBox() {
-        dragElement(document.getElementById("selected-items-box"));
+        const selectedItemsBox = document.getElementById("selected-items-box");
+        if (selectedItemsBox) {
+            dragElement(selectedItemsBox);
+        }
         function dragElement(elmnt) {
+            if (!elmnt) return;
             const header = document.getElementById(elmnt.id + "-header");
             let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (header) {
