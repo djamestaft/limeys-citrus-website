@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "mcp__upstash-context-7-mcp__resolve-library-id",
+      "mcp__upstash-context-7-mcp__get-library-docs",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
