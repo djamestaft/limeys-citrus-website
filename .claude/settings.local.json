@@ -5,7 +5,10 @@
       "mcp__upstash-context-7-mcp__resolve-library-id",
       "mcp__upstash-context-7-mcp__get-library-docs",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []
