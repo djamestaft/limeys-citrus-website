@@ -202,7 +202,7 @@ export function EquipmentRentalSystem() {
   }
 
   return (
-    <div className="flex h-screen bg-background text-foreground">
+    <div className="flex h-screen bg-background/80 backdrop-blur-sm text-foreground border border-blue-200/30 shadow-blue-glow-sm">
       <CategorySidebar
         categories={categories}
         selectedCategory={selectedCategory}

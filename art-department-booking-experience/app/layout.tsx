@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans ${dmSans.variable} antialiased`}>
+    <html lang="en">
+      <body className={`font-sans ${dmSans.variable} antialiased bg-gradient-to-br from-blue-50 to-blue-100`}>
         <Suspense fallback={<div>Loading...</div>}>
           {children}
           <Analytics />
