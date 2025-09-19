@@ -33,7 +33,7 @@ const mockEquipment: Equipment[] = [
     description: "Large format digital cinema camera with 4.5K recording",
     dailyRate: 850,
     weeklyRate: 4250,
-    image: "/arri-alexa-mini-lf-professional-cinema-camera.jpg",
+    image: "https://images.unsplash.com/photo-1596209937290-622e1a3ee873?w=500&h=375&fit=crop&crop=center",
     availability: "available",
     specifications: {
       Sensor: "Large Format CMOS",
@@ -50,7 +50,7 @@ const mockEquipment: Equipment[] = [
     description: "8K full-frame cinema camera with global shutter",
     dailyRate: 950,
     weeklyRate: 4750,
-    image: "/red-v-raptor-8k-cinema-camera.jpg",
+    image: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=500&h=375&fit=crop&crop=center",
     availability: "available",
     specifications: {
       Sensor: "8K Full Frame",
@@ -67,7 +67,7 @@ const mockEquipment: Equipment[] = [
     description: "Color-tunable LED softlight panel",
     dailyRate: 125,
     weeklyRate: 625,
-    image: "/arri-skypanel-s60-c-led-lighting-panel.jpg",
+    image: "https://images.unsplash.com/photo-1542744173-8b8afa9c593c?w=500&h=375&fit=crop&crop=center",
     availability: "available",
     specifications: {
       Power: "200W",
@@ -84,7 +84,7 @@ const mockEquipment: Equipment[] = [
     description: "8-input/12-track portable mixer and recorder",
     dailyRate: 185,
     weeklyRate: 925,
-    image: "/sound-devices-833-professional-audio-mixer.jpg",
+    image: "https://images.unsplash.com/photo-1286827388534-3a8f0a5b7d8a?w=500&h=375&fit=crop&crop=center",
     availability: "rented",
     specifications: {
       Inputs: "8 Mic/Line",
@@ -101,7 +101,7 @@ const mockEquipment: Equipment[] = [
     description: "Hybrid cinema camera with 8K internal recording",
     dailyRate: 275,
     weeklyRate: 1375,
-    image: "/placeholder.svg?height=300&width=400&text=Canon+R5C",
+    image: "https://images.unsplash.com/photo-1554080351-a76ca4bcf545?w=500&h=375&fit=crop&crop=center",
     availability: "available",
     specifications: {
       Sensor: "Full Frame CMOS",
@@ -118,7 +118,7 @@ const mockEquipment: Equipment[] = [
     description: "1800W HMI daylight balanced light",
     dailyRate: 95,
     weeklyRate: 475,
-    image: "/placeholder.svg?height=300&width=400&text=ARRI+M18",
+    image: "https://images.unsplash.com/photo-1547149600-a6cdf8fce60c?w=500&h=375&fit=crop&crop=center",
     availability: "maintenance",
     specifications: {
       Power: "1800W",

@@ -67,7 +67,7 @@ export function EquipmentCard({ equipment, onAddToCart }: EquipmentCardProps) {
       <CardHeader className="p-0">
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
           <Image
-            src={equipment.image || "/placeholder.svg"}
+            src={equipment.image || "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&h=375&fit=crop&crop=center"}
             alt={equipment.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -121,7 +121,7 @@ export function EquipmentCard({ equipment, onAddToCart }: EquipmentCardProps) {
                   <div className="space-y-4">
                     <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                       <Image
-                        src={equipment.image || "/placeholder.svg"}
+                        src={equipment.image || "https://images.unsplash.com/photo-1558618666-fcd44ded4cd4?w=500&h=375&fit=crop&crop=center"}
                         alt={equipment.name}
                         fill
                         className="object-cover"
